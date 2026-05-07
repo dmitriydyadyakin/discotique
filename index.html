@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Дискотека 2026 | ENERGY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="laserCanvas"></canvas>
+
+    <header>
+        <div class="container">
+            <div class="logo">🪩 ENERGY CLUB 🪩</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">О событии</a></li>
+                    <li><a href="#services">Программа</a></li>
+                    <li><a href="#contact">Билеты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="badge">🔥 SOLD OUT ТРЕТИЙ ГОД ПОДРЯД 🔥</span>
+                    <h1>ДИСКОТЕКА<br><span class="gradient-text">ENERGY</span></h1>
+                    <div class="event-info">
+                        <div class="info-card">📅 25 МАЯ 2026</div>
+                        <div class="info-card">⏰ 21:00 — 06:00</div>
+                        <div class="info-card">📍 КЛУБ "ENERGY"</div>
+                    </div>
+                    <a href="#contact" class="btn pulse">🎟 КУПИТЬ БИЛЕТ</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>⚡ О МЕРОПРИЯТИИ ⚡</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p><strong>Самая масштабная вечеринка года!</strong> Тысячи людей, невероятная энергия и лучшие DJ страны.</p>
+                        <p>🎧 <strong>ХЕДЛАЙНЕРЫ:</strong> DJ RAM, MC TONYX, SPECIAL GUEST из Европы</p>
+                        <p>💡 <strong>ШОУ:</strong> Лазерное 3D-шоу, пиротехника, светодиодные экраны 360°</p>
+                        <p>🍾 <strong>VIP-ЗОНА:</strong> Отдельный вход, шампанское, обслуживание официантами</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">🎛️ 5 залов</div>
+                        <div class="stat">🎤 10+ DJ</div>
+                        <div class="stat">💃 3000 гостей</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>🔥 ЧТО ТЕБЯ ЖДЁТ 🔥</h2>
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-icon">🪩</div>
+                        <h3>ЗЕРКАЛЬНЫЙ ШАР</h3>
+                        <p>Атмосфера настоящей дискотеки 80-х + современные технологии</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🍹</div>
+                        <h3>БАР ВСЮ НОЧЬ</h3>
+                        <p>Фирменные коктейли, энергетики и закуски без перерыва</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📸</div>
+                        <h3>ФОТОЗОНЫ</h3>
+                        <p>Instagram-локации, моментальные фото и видео на память</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🎁</div>
+                        <h3>РОЗЫГРЫШИ</h3>
+                        <p>Призы от партнёров каждые 30 минут на сцене</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>🎟 ЗАБРОНИРУЙ МЕСТО 🎟</h2>
+                <div class="price-block">
+                    <div class="price-card">🎫 EARLY BIRD<br><span class="price">900 ₽</span><br><small>до 1 мая</small></div>
+                    <div class="price-card">🔥 СТАНДАРТ<br><span class="price">1500 ₽</span><br><small>до 25 мая</small></div>
+                    <div class="price-card">👑 VIP<br><span class="price">3500 ₽</span><br><small>отдельный вход + стол</small></div>
+                </div>
+                <form>
+                    <input type="text" placeholder="ТВОЁ ИМЯ" required>
+                    <input type="email" placeholder="E-MAIL" required>
+                    <input type="tel" placeholder="ТЕЛЕФОН" required>
+                    <select>
+                        <option>Early Bird — 900 ₽</option>
+                        <option>Стандарт — 1500 ₽</option>
+                        <option>VIP — 3500 ₽</option>
+                    </select>
+                    <button type="submit" class="btn">💃 ЗАБРАТЬ БИЛЕТ 🕺</button>
+                </form>
+                <p class="form-note">После оплаты билет придёт на почту и в Telegram</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 ENERGY CLUB — Танцуй, пока молодой!</p>
+            <div class="socials">
+                <a href="#">Instagram</a> | <a href="#">VK</a> | <a href="#">Telegram</a> | <a href="#">TikTok</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // CANVAS ЛАЗЕРЫ
+        const canvas = document.getElementById('laserCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resizeCanvas() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < 80; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 3 + 1,
+                    speedX: (Math.random() - 0.5) * 1.5,
+                    speedY: (Math.random() - 0.5) * 1.5,
+                    color: `hsl(${Math.random() * 60 + 280}, 100%, 60%)`
+                });
+            }
+        }
+
+        function drawLaserBeams() {
+            for (let i = 0; i < 8; i++) {
+                ctx.beginPath();
+                ctx.moveTo(width * Math.random(), height * Math.random());
+                ctx.lineTo(width * Math.random(), height * Math.random());
+                ctx.strokeStyle = `hsla(${Math.random() * 60 + 280}, 100%, 60%, 0.3)`;
+                ctx.lineWidth = Math.random() * 4 + 1;
+                ctx.stroke();
+            }
+        }
+
+        function animate() {
+            if (!ctx) return;
+            ctx.clearRect(0, 0, width, height);
+            
+            drawLaserBeams();
+            
+            particles.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+                p.x += p.speedX;
+                p.y += p.speedY;
+                if (p.x < 0) p.x = width;
+                if (p.x > width) p.x = 0;
+                if (p.y < 0) p.y = height;
+                if (p.y > height) p.y = 0;
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            initParticles();
+        });
+        resizeCanvas();
+        initParticles();
+        animate();
+    </script>
+</body>
+</html>
